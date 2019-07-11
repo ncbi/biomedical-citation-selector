@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE PubmedArticleSet PUBLIC "-//NLM//DTD PubMedArticle, 1st June 2018//EN" "https://dtd.nlm.nih.gov/ncbi/pubmed/out/pubmed_180601.dtd">
+<PubmedArticleSet>
+<PubmedArticle>
+    <MedlineCitation Status="MEDLINE" Owner="NLM">
+      <PMID Version="1">12269810</PMID>
+      <DateCompleted>
+        <Year>2002</Year>
+        <Month>11</Month>
+        <Day>19</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2008</Year>
+        <Month>11</Month>
+        <Day>21</Day>
+      </DateRevised>
+      <Article PubModel="Print">
+        <Journal>
+          <ISSN IssnType="Print">0006-2960</ISSN>
+          <JournalIssue CitedMedium="Print">
+            <Volume>41</Volume>
+            <Issue>39</Issue>
+            <PubDate>
+              <Year>2002</Year>
+              <Month>Oct</Month>
+              <Day>01</Day>
+            </PubDate>
+          </JournalIssue>
+          <Title>Biochemistry</Title>
+          <ISOAbbreviation>Biochemistry</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Structures of apolipoprotein A-II and a lipid-surrogate complex provide insights into apolipoprotein-lipid interactions.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>11681-91</MedlinePgn>
+        </Pagination>
+        <Abstract>
+          <AbstractText>Apolipoproteins A-I and A-II form the major protein constituents of high-density lipid particles (HDL), the concentration of which is inversely correlated with the frequency of heart disease in humans. Although the physiological role of apolipoprotein A-II is unclear, evidence for its involvement in free fatty acid metabolism in mice has recently been obtained. Currently, the best characterized activity of apolipoprotein A-II is its potent antagonism of the anti-atherogenic and anti-inflammatory activities of apolipoprotein A-I, probably due to its competition with the latter for lipid acyl side chains in HDL. Many interactions of apolipoprotein A-I with enzymes and proteins involved in reverse cholesterol transport and HDL maturation are mediated by lipid-bound protein. The structural bases of interaction with lipids are expected to be common to exchangeable apolipoproteins and attributable to amphipathic alpha-helices present in each of them. Thus, characterization of apolipoprotein-lipid interactions in any apolipoprotein is likely to provide information that is applicable to the entire class. We report structures of human apolipoprotein A-II and its complex with beta-octyl glucoside, a widely used lipid surrogate. The former shows that disulfide-linked dimers of apolipoprotein A-II form amphipathic alpha-helices which aggregate into tetramers. Dramatic changes, observed in the presence of beta-octyl glucoside, might provide clues to the structural basis for its antagonism of apolipoprotein A-I. Additionally, excursions of individual molecules of apolipoprotein A-II from a common helical architecture in both structures indicate that lipid-bound apolipoproteins are likely to have an ensemble of related conformations. These structures provide the first experimental paradigm for description of apolipoprotein-lipid interactions at the atomic level.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Kumar</LastName>
+            <ForeName>M Suresh</ForeName>
+            <Initials>MS</Initials>
+            <AffiliationInfo>
+              <Affiliation>Center for Biophysical Sciences and Engineering, University of Alabama at Birmingham, 1530 3rd Avenue South, Birmingham, AL 35294, USA.</Affiliation>
+            </AffiliationInfo>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Carson</LastName>
+            <ForeName>M</ForeName>
+            <Initials>M</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Hussain</LastName>
+            <ForeName>M Mahmood</ForeName>
+            <Initials>MM</Initials>
+          </Author>
+          <Author ValidYN="Y">
+            <LastName>Murthy</LastName>
+            <ForeName>H M Krishna</ForeName>
+            <Initials>HM</Initials>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <DataBankList CompleteYN="Y">
+          <DataBank>
+            <DataBankName>PDB</DataBankName>
+            <AccessionNumberList>
+              <AccessionNumber>1L6K</AccessionNumber>
+              <AccessionNumber>1L6L</AccessionNumber>
+            </AccessionNumberList>
+          </DataBank>
+        </DataBankList>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+          <PublicationType UI="D013485">Research Support, Non-U.S. Gov't</PublicationType>
+          <PublicationType UI="D013487">Research Support, U.S. Gov't, P.H.S.</PublicationType>
+        </PublicationTypeList>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>United States</Country>
+        <MedlineTA>Biochemistry</MedlineTA>
+        <NlmUniqueID>0370623</NlmUniqueID>
+        <ISSNLinking>0006-2960</ISSNLinking>
+      </MedlineJournalInfo>
+      <ChemicalList>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D016633">Apolipoprotein A-II</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D005960">Glucosides</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D008075">Lipoproteins, HDL</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>0</RegistryNumber>
+          <NameOfSubstance UI="D046911">Macromolecular Substances</NameOfSubstance>
+        </Chemical>
+        <Chemical>
+          <RegistryNumber>29836-26-8</RegistryNumber>
+          <NameOfSubstance UI="C018619">octyl-beta-D-glucoside</NameOfSubstance>
+        </Chemical>
+      </ChemicalList>
+      <CitationSubset>IM</CitationSubset>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="CommentIn">
+          <RefSource>Fed Regist. 2018 Apr 16;83(73):16370-16371</RefSource>
+          <PMID Version="1">30407470</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <MeshHeadingList>
+        <MeshHeading>
+          <DescriptorName UI="D000595" MajorTopicYN="N">Amino Acid Sequence</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D016633" MajorTopicYN="N">Apolipoprotein A-II</DescriptorName>
+          <QualifierName UI="Q000737" MajorTopicYN="Y">chemistry</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D003198" MajorTopicYN="N">Computer Simulation</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D018360" MajorTopicYN="N">Crystallography, X-Ray</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D019281" MajorTopicYN="N">Dimerization</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D005960" MajorTopicYN="N">Glucosides</DescriptorName>
+          <QualifierName UI="Q000737" MajorTopicYN="Y">chemistry</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D006801" MajorTopicYN="N">Humans</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008075" MajorTopicYN="N">Lipoproteins, HDL</DescriptorName>
+          <QualifierName UI="Q000737" MajorTopicYN="Y">chemistry</QualifierName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D046911" MajorTopicYN="N">Macromolecular Substances</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008958" MajorTopicYN="N">Models, Molecular</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D008969" MajorTopicYN="N">Molecular Sequence Data</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D011487" MajorTopicYN="N">Protein Conformation</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D017433" MajorTopicYN="N">Protein Structure, Secondary</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D055672" MajorTopicYN="N">Static Electricity</DescriptorName>
+        </MeshHeading>
+        <MeshHeading>
+          <DescriptorName UI="D013329" MajorTopicYN="N">Structure-Activity Relationship</DescriptorName>
+        </MeshHeading>
+      </MeshHeadingList>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2002</Year>
+          <Month>9</Month>
+          <Day>25</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2002</Year>
+          <Month>11</Month>
+          <Day>26</Day>
+          <Hour>4</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2002</Year>
+          <Month>9</Month>
+          <Day>25</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">12269810</ArticleId>
+        <ArticleId IdType="pii">bi026069w</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM">
+      <PMID Version="1">21179314</PMID>
+      <DateCompleted>
+        <Year>2012</Year>
+        <Month>04</Month>
+        <Day>09</Day>
+      </DateCompleted>
+      <DateRevised>
+        <Year>2018</Year>
+        <Month>11</Month>
+        <Day>07</Day>
+      </DateRevised>
+      <Article PubModel="Print-Electronic">
+        <Journal>
+          <ISSN IssnType="Electronic">2218-0532</ISSN>
+          <JournalIssue CitedMedium="Internet">
+            <Volume>78</Volume>
+            <Issue>4</Issue>
+            <PubDate>
+              <MedlineDate>2010 Oct-Dec</MedlineDate>
+            </PubDate>
+          </JournalIssue>
+          <Title>Scientia pharmaceutica</Title>
+          <ISOAbbreviation>Sci Pharm</ISOAbbreviation>
+        </Journal>
+        <ArticleTitle>Synthesis and antimicrobial activity of long-chain 3,4-Epoxy-2-alkanones.</ArticleTitle>
+        <Pagination>
+          <MedlinePgn>745-51</MedlinePgn>
+        </Pagination>
+        <ELocationID EIdType="doi" ValidYN="Y">10.3797/scipharm.1009-02</ELocationID>
+        <Abstract>
+          <AbstractText>3,4-Epoxy-2-dodecanone, a major component in the preorbital gland of the African grey duiker (Sylvicapra grimmia), showed antimicrobial activity in preliminary tests. The C(11) to C(17) homologues of this compound were prepared and their activity against several pathogenic dermal bacteria and fungi was tested. 3,4-Epoxy-2-dodecanone and 3,4-epoxy-2-tridecanone inhibited the growth of Trichophyton mentagrophytes at 25 Îg/mL. Moderate inhibition of the growth of the bacteria Propionibacterium acnes and the lipophilic yeast, Pityrosporum ovale, was seen for several of the homologues.</AbstractText>
+        </Abstract>
+        <AuthorList CompleteYN="Y">
+          <Author ValidYN="Y">
+            <LastName>Wood</LastName>
+            <ForeName>William F</ForeName>
+            <Initials>WF</Initials>
+            <AffiliationInfo>
+              <Affiliation>Department of Chemistry, Humboldt State University, 1 Harpst St., Arcata, California, 95521, U.S.A. wfw2@humboldt.edu</Affiliation>
+            </AffiliationInfo>
+          </Author>
+        </AuthorList>
+        <Language>eng</Language>
+        <PublicationTypeList>
+          <PublicationType UI="D016428">Journal Article</PublicationType>
+        </PublicationTypeList>
+        <ArticleDate DateType="Electronic">
+          <Year>2010</Year>
+          <Month>10</Month>
+          <Day>09</Day>
+        </ArticleDate>
+      </Article>
+      <MedlineJournalInfo>
+        <Country>Switzerland</Country>
+        <MedlineTA>Sci Pharm</MedlineTA>
+        <NlmUniqueID>0026251</NlmUniqueID>
+        <ISSNLinking>0036-8709</ISSNLinking>
+      </MedlineJournalInfo>
+      <CommentsCorrectionsList>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Chem Ecol. 1990 Feb;16(2):397-416</RefSource>
+          <PMID Version="1">24263498</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Biochem Syst Ecol. 2001 Apr;29(4):417-419</RefSource>
+          <PMID Version="1">11182489</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Experientia. 1995 Apr 15;51(4):368-9</RefSource>
+          <PMID Version="1">7729504</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>J Chem Ecol. 1995 Oct;21(10):1401-8</RefSource>
+          <PMID Version="1">24233672</PMID>
+        </CommentsCorrections>
+        <CommentsCorrections RefType="Cites">
+          <RefSource>Bioorg Med Chem Lett. 2010 Mar 15;20(6):1819-20</RefSource>
+          <PMID Version="1">20185306</PMID>
+        </CommentsCorrections>
+      </CommentsCorrectionsList>
+      <KeywordList Owner="NOTNLM">
+        <Keyword MajorTopicYN="N">3,4-Epoxy-2-alkanones</Keyword>
+        <Keyword MajorTopicYN="N">Antifungal activity</Keyword>
+        <Keyword MajorTopicYN="N">Propionibacterium</Keyword>
+        <Keyword MajorTopicYN="N">Trichophyton</Keyword>
+      </KeywordList>
+      <GeneralNote Owner="NLM">Original DateCompleted: 20111110</GeneralNote>
+    </MedlineCitation>
+    <PubmedData>
+      <History>
+        <PubMedPubDate PubStatus="received">
+          <Year>2010</Year>
+          <Month>09</Month>
+          <Day>01</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="accepted">
+          <Year>2010</Year>
+          <Month>10</Month>
+          <Day>08</Day>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="entrez">
+          <Year>2010</Year>
+          <Month>12</Month>
+          <Day>24</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="pubmed">
+          <Year>2010</Year>
+          <Month>12</Month>
+          <Day>24</Day>
+          <Hour>6</Hour>
+          <Minute>0</Minute>
+        </PubMedPubDate>
+        <PubMedPubDate PubStatus="medline">
+          <Year>2010</Year>
+          <Month>12</Month>
+          <Day>24</Day>
+          <Hour>6</Hour>
+          <Minute>1</Minute>
+        </PubMedPubDate>
+      </History>
+      <PublicationStatus>ppublish</PublicationStatus>
+      <ArticleIdList>
+        <ArticleId IdType="pubmed">21179314</ArticleId>
+        <ArticleId IdType="doi">10.3797/scipharm.1009-02</ArticleId>
+        <ArticleId IdType="pii">scipharm.2010.78.745</ArticleId>
+        <ArticleId IdType="pmc">PMC3007617</ArticleId>
+      </ArticleIdList>
+    </PubmedData>
+  </PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="PubMed-not-MEDLINE" Owner="NLM">
+        <PMID Version="1">30160246</PMID>
+        <DateCompleted>
+            <Year>2018</Year>
+            <Month>10</Month>
+            <Day>02</Day>
+        </DateCompleted>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>10</Month>
+            <Day>04</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1361-6528</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>29</Volume>
+                    <Issue>47</Issue>
+                    <PubDate>
+                        <Year>2018</Year>
+                        <Month>Nov</Month>
+                        <Day>23</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Nanotechnology</Title>
+                <ISOAbbreviation>Nanotechnology</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Mechanics of the folding of a nanotube.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>475602</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1088/1361-6528/aaddc3</ELocationID>
+            <Abstract>
+                <AbstractText>Nanotubes fold due to the competition between their mechanical stability and van der Waals interactions. The caused dramatic morphology change promises exciting applications of nanotubes in responsive and reconfigurable nanodevices. To investigate the folding mechanism, a curvature-based finite-deformation theoretical model simultaneously considering both the folding of a nanotube and the possible collapsing of the cross-section is developed. The predicted critical condition and the profiles in both axial and transverse directions agree well with molecular dynamics (MD) solutions, demonstrating that the cross-sectional deformation should be taken into account when investigating the folding of a nanotube with a large diameter. Moreover, simple scaling laws of the critical conditions are proposed through a small-deformation theoretical model. With these scaling laws, one can easily and quickly determine both the collapsing state of the cross-section and the folding state of the nanotube with only geometrical parameters [Formula: see text] rather than the difficult-to-determine material properties [Formula: see text].</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Li</LastName>
+                    <ForeName>Ming</ForeName>
+                    <Initials>M</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>State Key Laboratory of Structural Analysis for Industrial Equipment, Dalian University of Technology, Dalian 116024, People's Republic of China.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Li</LastName>
+                    <ForeName>Hao</ForeName>
+                    <Initials>H</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Li</LastName>
+                    <ForeName>Fengwei</ForeName>
+                    <Initials>F</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Kang</LastName>
+                    <ForeName>Zhan</ForeName>
+                    <Initials>Z</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Meng</LastName>
+                    <ForeName>Xianhong</ForeName>
+                    <Initials>X</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2018</Year>
+                <Month>08</Month>
+                <Day>30</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>Nanotechnology</MedlineTA>
+            <NlmUniqueID>101241272</NlmUniqueID>
+            <ISSNLinking>0957-4484</ISSNLinking>
+        </MedlineJournalInfo>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>31</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>31</Day>
+                <Hour>6</Hour>
+                <Minute>1</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2018</Year>
+                <Month>8</Month>
+                <Day>31</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30160246</ArticleId>
+            <ArticleId IdType="doi">10.1088/1361-6528/aaddc3</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="Publisher" Owner="NLM">
+        <PMID Version="1">29994383</PMID>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>07</Month>
+            <Day>11</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">2168-2275</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <PubDate>
+                        <Year>2018</Year>
+                        <Month>Feb</Month>
+                        <Day>08</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>IEEE transactions on cybernetics</Title>
+                <ISOAbbreviation>IEEE Trans Cybern</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>R-2-DPCA and Face Recognition.</ArticleTitle>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1109/TCYB.2018.2796642</ELocationID>
+            <Abstract>
+                <AbstractText>2-D principal component analysis (2-DPCA) is one of the successful dimensionality reduction approaches for image classification and representation. However, 2-DPCA is not robust to outliers. To tackle this problem, we present an efficient robust method, namely R-2-DPCA for feature extraction. R-2-DPCA aims to seek the projection matrix such that the projected data have the maximum variance, which is measured by R-norm. Compared with most existing robust 2-DPCA methods, our model is not only robust to outliers but also helps encode discriminant information. Accordingly, we develop a nongreedy iterative algorithm, which has not only a closed-form solution in each iteration but also a good convergence, to solve our model. Moreover, to further improve classification performance, we employ nuclear norm as the distance metric in the classification phase. Extensive experiments on several face databases illustrate that our proposed method is superior to most existing robust 2-DPCA methods.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Gao</LastName>
+                    <ForeName>Quanxue</ForeName>
+                    <Initials>Q</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Xu</LastName>
+                    <ForeName>Sai</ForeName>
+                    <Initials>S</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Chen</LastName>
+                    <ForeName>Fang</ForeName>
+                    <Initials>F</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Ding</LastName>
+                    <ForeName>Chris</ForeName>
+                    <Initials>C</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Gao</LastName>
+                    <ForeName>Xinbo</ForeName>
+                    <Initials>X</Initials>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Li</LastName>
+                    <ForeName>Yunsong</ForeName>
+                    <Initials>Y</Initials>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2018</Year>
+                <Month>02</Month>
+                <Day>08</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>IEEE Trans Cybern</MedlineTA>
+            <NlmUniqueID>101609393</NlmUniqueID>
+            <ISSNLinking>2168-2267</ISSNLinking>
+        </MedlineJournalInfo>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2018</Year>
+                <Month>7</Month>
+                <Day>12</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2018</Year>
+                <Month>7</Month>
+                <Day>12</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2018</Year>
+                <Month>7</Month>
+                <Day>12</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>aheadofprint</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">29994383</ArticleId>
+            <ArticleId IdType="doi">10.1109/TCYB.2018.2796642</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="In-Data-Review" Owner="NLM">
+        <PMID Version="1">30886396</PMID>
+        <DateRevised>
+            <Year>2019</Year>
+            <Month>03</Month>
+            <Day>19</Day>
+        </DateRevised>
+        <Article PubModel="Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">2045-2322</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>9</Volume>
+                    <Issue>1</Issue>
+                    <PubDate>
+                        <Year>2019</Year>
+                        <Month>Mar</Month>
+                        <Day>18</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Scientific reports</Title>
+                <ISOAbbreviation>Sci Rep</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>MR1 recycling and blockade of endosomal trafficking reveal distinguishable antigen presentation pathways between Mycobacterium tuberculosis infection and exogenously delivered antigens.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>4797</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1038/s41598-019-41402-y</ELocationID>
+            <Abstract>
+                <AbstractText>The MHC-Ib molecule MR1 presents microbial metabolites to MR1-restricted T cells (MR1Ts). Given the ubiquitous expression of MR1 and the high prevalence of human MR1Ts, it is important to understand the mechanisms of MR1-dependent antigen presentation. Here, we show that MR1-dependent antigen presentation can be distinguished between intracellular Mycobacterium tuberculosis (Mtb) infection and exogenously added antigens. Although both Mtb infection and exogenously added antigens are presented by preformed MR1, only exogenously added antigens are capable of reusing MR1 that had been bound to the folic acid metabolite 6-formylpterin (6-FP). In addition, we identify an endosomal trafficking protein, Syntaxin 4, which is specifically involved in the presentation of exogenously delivered antigens but not Mtb-dependent antigen presentation. These data reveal there are multiple ways that MR1 can sample antigens and that MR1-mediated sampling of intracellular Mtb infection is distinguishable from the sampling of exogenously added antigens.</AbstractText>
+            </Abstract>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Karamooz</LastName>
+                    <ForeName>Elham</ForeName>
+                    <Initials>E</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>VA Portland Health Care System, Research and Development, 3710 SW US Veterans Hospital Road, Portland, 97239, Oregon, USA. karamooz@ohsu.edu.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Pulmonary &amp; Critical Care Medicine, Oregon Health &amp; Science University, 3181 SW Sam Jackson Park Road, Portland, Oregon, 97239, USA. karamooz@ohsu.edu.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Harriff</LastName>
+                    <ForeName>Melanie J</ForeName>
+                    <Initials>MJ</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>VA Portland Health Care System, Research and Development, 3710 SW US Veterans Hospital Road, Portland, 97239, Oregon, USA.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Pulmonary &amp; Critical Care Medicine, Oregon Health &amp; Science University, 3181 SW Sam Jackson Park Road, Portland, Oregon, 97239, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Narayanan</LastName>
+                    <ForeName>Gitanjali A</ForeName>
+                    <Initials>GA</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>Pulmonary &amp; Critical Care Medicine, Oregon Health &amp; Science University, 3181 SW Sam Jackson Park Road, Portland, Oregon, 97239, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Worley</LastName>
+                    <ForeName>Aneta</ForeName>
+                    <Initials>A</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>VA Portland Health Care System, Research and Development, 3710 SW US Veterans Hospital Road, Portland, 97239, Oregon, USA.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+                <Author ValidYN="Y">
+                    <LastName>Lewinsohn</LastName>
+                    <ForeName>David M</ForeName>
+                    <Initials>DM</Initials>
+                    <AffiliationInfo>
+                        <Affiliation>VA Portland Health Care System, Research and Development, 3710 SW US Veterans Hospital Road, Portland, 97239, Oregon, USA. lewinsod@ohsu.edu.</Affiliation>
+                    </AffiliationInfo>
+                    <AffiliationInfo>
+                        <Affiliation>Pulmonary &amp; Critical Care Medicine, Oregon Health &amp; Science University, 3181 SW Sam Jackson Park Road, Portland, Oregon, 97239, USA. lewinsod@ohsu.edu.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <GrantList CompleteYN="Y">
+                <Grant>
+                    <GrantID>T32HL083808</GrantID>
+                    <Agency>U.S. Department of Health &amp;amp; Human Services | NIH | National Heart, Lung, and Blood Institute (NHLBI)</Agency>
+                    <Country/>
+                </Grant>
+                <Grant>
+                    <GrantID>T32HL083808</GrantID>
+                    <Agency>U.S. Department of Health &amp;amp; Human Services | NIH | National Heart, Lung, and Blood Institute (NHLBI)</Agency>
+                    <Country/>
+                </Grant>
+                <Grant>
+                    <GrantID>IK2CX000538</GrantID>
+                    <Agency>U.S. Department of Veterans Affairs (Department of Veterans Affairs)</Agency>
+                    <Country/>
+                </Grant>
+                <Grant>
+                    <GrantID>I01BX000533</GrantID>
+                    <Agency>U.S. Department of Veterans Affairs (Department of Veterans Affairs)</Agency>
+                    <Country/>
+                </Grant>
+                <Grant>
+                    <GrantID>R01AI29976</GrantID>
+                    <Agency>U.S. Department of Health &amp;amp; Human Services | NIH | National Institute of Allergy and Infectious Diseases (NIAID)</Agency>
+                    <Country/>
+                </Grant>
+                <Grant>
+                    <GrantID>R01AI048090</GrantID>
+                    <Agency>U.S. Department of Health &amp;amp; Human Services | NIH | National Institute of Allergy and Infectious Diseases (NIAID)</Agency>
+                    <Country/>
+                </Grant>
+            </GrantList>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2019</Year>
+                <Month>03</Month>
+                <Day>18</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>England</Country>
+            <MedlineTA>Sci Rep</MedlineTA>
+            <NlmUniqueID>101563288</NlmUniqueID>
+            <ISSNLinking>2045-2322</ISSNLinking>
+        </MedlineJournalInfo>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="received">
+                <Year>2018</Year>
+                <Month>10</Month>
+                <Day>16</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="accepted">
+                <Year>2019</Year>
+                <Month>03</Month>
+                <Day>05</Day>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>20</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>epublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30886396</ArticleId>
+            <ArticleId IdType="doi">10.1038/s41598-019-41402-y</ArticleId>
+            <ArticleId IdType="pii">10.1038/s41598-019-41402-y</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="In-Data-Review" Owner="NLM">
+        <PMID Version="1">30883917</PMID>
+        <DateRevised>
+            <Year>2019</Year>
+            <Month>03</Month>
+            <Day>18</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1097-4547</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>97</Volume>
+                    <Issue>5</Issue>
+                    <PubDate>
+                        <Year>2019</Year>
+                        <Month>May</Month>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Journal of neuroscience research</Title>
+                <ISOAbbreviation>J. Neurosci. Res.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Retraction.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>639</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1002/jnr.24407</ELocationID>
+            <Abstract>
+                <AbstractText>Penkowa, M., &amp; Hidalgo, J. J. (2003). Treatment with metallothionein prevents demyelination and axonal damage and increases oligodendrocyte precursors and tissue repair during experimental autoimmune encephalomyelitis. Neuroscience Research, 72(5):574-586. https://doi.org/10.1002/jnr.10615. The above article published online on 08 April 2003 in Wiley Online Library (wileyonlinelibrary.com) has been retracted by agreement between the primary author, Dr. Juan Hidalgo, the journal Editor-in-Chief, Eric M Prager, and Wiley Periodicals, Inc. This retraction has been agreed due to discrepancies in the type and number of animals used in experiments performed by the corresponding author, Milena Penkowa, identified during the course of investigations into Ms. Penkowa's research by the University of Copenhagen in 2012, rendering the data and conclusions drawn from them unreliable. The authors would like to apologize to The Journal of Neuroscience Research and their colleagues for any difficulties caused by the publication of this article. REFERENCE: Penkowa, M., &amp; Hidalgo, J. J. (2003). Treatment with metallothionein prevents demyelination and axonal damage and increases oligodendrocyte precursors and tissue repair during experimental autoimmune encephalomyelitis. Neuroscience Research, 72(5):574-586. https://doi.org/10.1002/jnr.10615.</AbstractText>
+                <CopyrightInformation> 2019 Wiley Periodicals, Inc.</CopyrightInformation>
+            </Abstract>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016440">Retraction of Publication</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2019</Year>
+                <Month>03</Month>
+                <Day>08</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>J Neurosci Res</MedlineTA>
+            <NlmUniqueID>7600111</NlmUniqueID>
+            <ISSNLinking>0360-4012</ISSNLinking>
+        </MedlineJournalInfo>
+        <CommentsCorrectionsList>
+            <CommentsCorrections RefType="RetractionOf">
+                <RefSource>J Neurosci Res. 2003 Jun 1;72(5):574-86</RefSource>
+                <PMID Version="1">12749022</PMID>
+            </CommentsCorrections>
+        </CommentsCorrectionsList>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>19</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>19</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2019</Year>
+                <Month>3</Month>
+                <Day>19</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30883917</ArticleId>
+            <ArticleId IdType="doi">10.1002/jnr.24407</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+<PubmedArticle>
+    <MedlineCitation Status="In-Data-Review" Owner="NLM">
+        <PMID Version="1">30299937</PMID>
+        <DateRevised>
+            <Year>2018</Year>
+            <Month>11</Month>
+            <Day>07</Day>
+        </DateRevised>
+        <Article PubModel="Print-Electronic">
+            <Journal>
+                <ISSN IssnType="Electronic">1520-6882</ISSN>
+                <JournalIssue CitedMedium="Internet">
+                    <Volume>90</Volume>
+                    <Issue>21</Issue>
+                    <PubDate>
+                        <Year>2018</Year>
+                        <Month>Nov</Month>
+                        <Day>06</Day>
+                    </PubDate>
+                </JournalIssue>
+                <Title>Analytical chemistry</Title>
+                <ISOAbbreviation>Anal. Chem.</ISOAbbreviation>
+            </Journal>
+            <ArticleTitle>Comment on METLIN: A Technology Platform for Identifying Knowns and Unknowns.</ArticleTitle>
+            <Pagination>
+                <MedlinePgn>13126-13127</MedlinePgn>
+            </Pagination>
+            <ELocationID EIdType="doi" ValidYN="Y">10.1021/acs.analchem.8b03613</ELocationID>
+            <AuthorList CompleteYN="Y">
+                <Author ValidYN="Y">
+                    <LastName>Kite</LastName>
+                    <ForeName>Geoffrey C</ForeName>
+                    <Initials>GC</Initials>
+                    <Identifier Source="ORCID">http://orcid.org/0000-0003-4482-0409</Identifier>
+                    <AffiliationInfo>
+                        <Affiliation>Analytical Methods , Royal Botanic Gardens , Kew, Richmond , Surrey TW9 3AE , United Kingdom.</Affiliation>
+                    </AffiliationInfo>
+                </Author>
+            </AuthorList>
+            <Language>eng</Language>
+            <PublicationTypeList>
+                <PublicationType UI="D016428">Journal Article</PublicationType>
+            </PublicationTypeList>
+            <ArticleDate DateType="Electronic">
+                <Year>2018</Year>
+                <Month>10</Month>
+                <Day>18</Day>
+            </ArticleDate>
+        </Article>
+        <MedlineJournalInfo>
+            <Country>United States</Country>
+            <MedlineTA>Anal Chem</MedlineTA>
+            <NlmUniqueID>0370536</NlmUniqueID>
+            <ISSNLinking>0003-2700</ISSNLinking>
+        </MedlineJournalInfo>
+    </MedlineCitation>
+    <PubmedData>
+        <History>
+            <PubMedPubDate PubStatus="pubmed">
+                <Year>2018</Year>
+                <Month>10</Month>
+                <Day>10</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="medline">
+                <Year>2018</Year>
+                <Month>10</Month>
+                <Day>10</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+            <PubMedPubDate PubStatus="entrez">
+                <Year>2018</Year>
+                <Month>10</Month>
+                <Day>10</Day>
+                <Hour>6</Hour>
+                <Minute>0</Minute>
+            </PubMedPubDate>
+        </History>
+        <PublicationStatus>ppublish</PublicationStatus>
+        <ArticleIdList>
+            <ArticleId IdType="pubmed">30299937</ArticleId>
+            <ArticleId IdType="doi">10.1021/acs.analchem.8b03613</ArticleId>
+        </ArticleIdList>
+    </PubmedData>
+</PubmedArticle>
+</PubmedArticleSet>
