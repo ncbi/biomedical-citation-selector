@@ -32,9 +32,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 Maneuver through its direction. Make sure to enter yes when it asks to add the miniconda path to the .bashrc
 
-
-Unfortunately python 3.7 is not currently compatible with tensorflow 1.11.0, the version used in this system.
-Since the latest miniconda comes with python 3.7 (as of March 2019), we will have to downgrade.
+Testing was done using python 3.6, and the right combination of tensorflow and python can be finicky. Since the latest miniconda comes with python 3.7 (as of March 2019), we will have to downgrade.
 Fortunately, this is easy:
 ```
 conda install python=3.6
