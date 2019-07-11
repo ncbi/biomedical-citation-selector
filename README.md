@@ -214,21 +214,13 @@ It is not necessary to include the --path option when running these tests.
 For a given test the following information is appended to the BmCS_test_results.txt file:
 
 Date       
-
 All command line keywords and values     
-
 BmCS recall     
-
 BmCS precision       
-
 Voting recall     
-
 Voting precision      
-
 CNN recall    
-
 CNN precision 
-
 
 
 Once the program is installed run both of the following commands: 
