@@ -3,9 +3,9 @@
 This repository contains the source code for the BmCS system, to be used for the prediction of citations requiring MeSH indexing
 This README includes the following sections
 
-Installation
-Usage
-Testing
+Installation           
+Usage        
+Testing           
 
 
 ## Installation
