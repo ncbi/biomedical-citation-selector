@@ -115,6 +115,7 @@ Each prediction is printed on a line, in the format
 pmid|prediction|probability|NLM journal ID 
 
 In the prediction field, 4 labels are possible:
+
 0: Out-of-scope for indexing, 99.5% confidence
 1: In-scope for indexing, 97% confidence
 2: Citation should be human-reviewed. 
