@@ -116,10 +116,10 @@ pmid|prediction|probability|NLM journal ID
 
 In the prediction field, 4 labels are possible:
 
-0: Out-of-scope for indexing, 99.5% confidence
-1: In-scope for indexing, 97% confidence
-2: Citation should be human-reviewed. 
-3: Citation marked as one of the publication types specified in the publication_types file. This label is off by default and is controlled by --pubtype-filter
+0: Out-of-scope for indexing, 99.5% confidence  
+1: In-scope for indexing, 97% confidence  
+2: Citation should be human-reviewed.  
+3: Citation marked as one of the publication types specified in the publication_types file. This label is off by default and is controlled by --pubtype-filter  
 
 ### Alternative implementation
 If the --filter option is provided, there are a few ways to filter and adjust the predictions.
