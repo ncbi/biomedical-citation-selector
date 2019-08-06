@@ -17,6 +17,8 @@ from .preprocess_CNN_data import get_batch_data
 from .preprocess_voting_data import preprocess_data
 from .BmCS_tests.BmCS_test import BmCS_test_main
 
+from .bmcs_cnn_model import CnnModel
+from .bmcs_scilearn_model import SciLearnModel
 
 def get_args():
     """
@@ -133,9 +135,19 @@ def main():
                 selectively_indexed_ids, predict_all, misindexed_ids 
                 ) 
         voting_citations, journal_ids, pmids = preprocess_data(citations)
-        voting_predictions = run_voting(args.ensemble_path, voting_citations)
+
+        o_sci_model = SciLearnModel()
+        o_sci_model.from_file(args.ensemble_path)
+        voting_predictions = o_sci_model.process(voting_citations)
+
+        #voting_predictions = run_voting(args.ensemble_path, voting_citations)
         CNN_citations = get_batch_data(citations, journal_ids_path, word_indices_path)
-        cnn_predictions = run_CNN(args.CNN_path, CNN_citations)
+
+        o_cnn_model = CnnModel()
+        o_cnn_model.from_file(resource_filename(__name__, "models/model_CNN.json"), args.CNN_path)
+        cnn_predictions = o_cnn_model.process(CNN_citations)
+
+        # cnn_predictions = run_CNN(args.CNN_path, CNN_citations)
         combined_predictions = combine_predictions(voting_predictions, cnn_predictions)
         prediction_dict = {'predictions': combined_predictions, 'journal_ids': journal_ids}
         adjusted_predictions = adjust_thresholds(prediction_dict, group_ids, group_thresh) 
