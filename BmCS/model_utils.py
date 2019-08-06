@@ -1,8 +1,8 @@
 """
 Module for model related functions
 
-Module contains functions for running models and combining predictions, 
-adjusting in-scope predictions, and adjusting predictions for publication type. 
+Module contains functions for running models and combining predictions,
+adjusting in-scope predictions, and adjusting predictions for publication type.
 """
 
 import numpy as np
@@ -57,17 +57,17 @@ def run_voting(ensemble_path, X):
 
 def adjust_thresholds(predictions_dict, group_ids, group_thresh):
     """
-    Adjust threshold depending on the category of the journal 
-    By default, no group thresholding will be performed. 
+    Adjust threshold depending on the category of the journal
+    By default, no group thresholding will be performed.
     2 is the label indicating uncertainty of in-scope status.
     0 is the label indicating certainty of out-of-scope prediction.
     """
 
     print("Combining predictions")
-    
+
     if not group_thresh:
         return [2 if y >= COMBINED_THRESH else 0 for y in predictions_dict['predictions']]
-    
+
     else:
         predictions = []
         for y, journal_id in zip(predictions_dict['predictions'], predictions_dict['journal_ids']):
@@ -106,12 +106,12 @@ def filter_pub_type(citations, predictions):
     """
     Filter citations based on the pubtype
 
-    This is indicated in two places: 
-    Either in the title, where there will be 
+    This is indicated in two places:
+    Either in the title, where there will be
     string, usually at the beginning of the title,
-    or at PubType status that in the xml itself. 
+    or at PubType status that in the xml itself.
     """
-    
+
     for i, citation in enumerate(citations):
         # Check the title for the strings that indicate the citation should sent to indexers for review
         if any(pub_string in citation['title'].lower() for pub_string in pub_strings):
