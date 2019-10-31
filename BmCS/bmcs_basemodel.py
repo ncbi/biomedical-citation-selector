@@ -1,6 +1,6 @@
 import os.path
 
-from bmcs_exceptions import BmCS_Exception
+from .bmcs_exceptions import BmCS_Exception
 
 class BaseModel(object):
     def __init__(self, *args, **kwargs):

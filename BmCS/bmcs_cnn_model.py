@@ -2,10 +2,10 @@ from keras.models import model_from_json
 from pkg_resources import resource_filename
 import os.path
 
-from embedding_custom import EmbeddingWithDropout
+from .embedding_custom import EmbeddingWithDropout
 
-from bmcs_basemodel import BaseModel
-from bmcs_exceptions import BmCS_Exception
+from .bmcs_basemodel import BaseModel
+from .bmcs_exceptions import BmCS_Exception
 
 
 class CnnModel(BaseModel):
@@ -14,14 +14,32 @@ class CnnModel(BaseModel):
 
     # Init CNN model from file
     def from_file(self, fname, weights_fname, d_custom_objects=None, loss='binary_crossentropy', optimizer='adam'):
+        if fname is None:
+            fname = "None"
+
+        # Init from supplied file or "standard" place
+        if not os.path.exists(fname):
+            fname_local = resource_filename(__name__, "models/model_CNN.json")
+            if not os.path.exists(fname_local):
+                msg = "CNN model file can't be found neither as \"{}\" nor as \"{}\".".format(fname, fname_local)
+                raise BmCS_Exception(msg)
+            else:
+                fname = fname_local
+
+        # If we are here, CNN file is in place
         super().from_file(fname)
 
-        if d_custom_objects is None:
-            d_custom_objects = {EmbeddingWithDropout.__name__: EmbeddingWithDropout}
-
-        if (not os.path.exists(weights_fname)) or (not os.path.isfile(weights_fname)):
-            msg = "Weights file \"{}\" does not exist or not a file.".format(weights_fname)
-            raise BmCS_Exception(msg)
+        # Check weights file
+        if weights_fname is None:
+            weights_fname = "None"
+            
+        if not os.path.exists(weights_fname):
+            weights_local = resource_filename(__name__, "models/model_CNN_weights.hdf5")
+            if not os.path.exists(weights_local):
+                msg = "CNN weight file can't be found: neither \"{}\" nor \"{}\".".format(weights_fname, weights_local)
+                raise BmCS_Exception(msg)
+            else:
+                weights_fname = weights_local
 
         model_json, model = None, None
 
@@ -31,6 +49,9 @@ class CnnModel(BaseModel):
         except Exception as e:
             msg = "Can't get content of \"{}\". Reason: \"{}\".".format(fname, str(e))
             raise BmCS_Exception(msg)
+
+        if d_custom_objects is None:
+            d_custom_objects = {EmbeddingWithDropout.__name__: EmbeddingWithDropout}
 
         try:
             model = model_from_json(model_json, custom_objects=d_custom_objects)
