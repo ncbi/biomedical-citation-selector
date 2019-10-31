@@ -11,7 +11,7 @@ import pickle
 import sys
 
 from ..model_utils import *
-from ..preprocess_CNN_data import get_batch_data 
+from ..preprocess_CNN_data import get_batch_data
 from .preprocess_voting_data_test import preprocess_data
 from ..thresholds import *
 

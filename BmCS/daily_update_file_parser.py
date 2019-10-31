@@ -9,54 +9,64 @@ from dateutil.parser import parse
 import re
 import xml.etree.ElementTree as ET
 import sys
+import os
 
 
-def parse_update_file(path, journal_drop, predict_medline, selectively_indexed_ids, predict_all, misindexed_ids):
+def parse_update_file(path, journal_drop, predict_medline, selectively_indexed_ids, predict_all,
+                      misindexed_ids, xml_string: str = None):
     """
     Main parsing function for BmCS
 
     Will return list of dictionaries, 
     each dictionary containing data for one citation 
     """
+    root_node = None
+    if path is not None and os.path.exists(path):
+        with open(path, 'rt', encoding='utf8') as _file:
+            root_node = ET.parse(_file)
+    elif xml_string is not None and len(xml_string) > 0:
+        root_node = ET.fromstring(xml_string)
+    else:
+        msg = "Neither XML file nor XML string provided."
+        raise Exception(msg)
 
-    with open(path, 'rt', encoding='utf8') as _file:
-        citations = []
-        root_node = ET.parse(_file)
-        for medline_citation_node in root_node.findall('PubmedArticle/MedlineCitation'):
-            citation_data = _extract_citation_data(medline_citation_node)
-            # Run on everything in a file:
-            if predict_all:
-                citation_dict = _construct_citation_dict(citation_data)
-                citations.append(citation_dict)
-            # Make predictions for only selectively indexed journals 
-            # that do not have a MEDLINE and PubMed-not-MEDLINE status yet.
-            # Citations that do not meet this criteria will not be processed,
-            # nor will citations from misindexed journals if 
-            # --no-journal-drop is included
-            elif not predict_medline and (citation_data[6] != "MEDLINE" and citation_data[6] != "PubMed-not-MEDLINE"):
-                if citation_data[4] in selectively_indexed_ids:
-                    if journal_drop:
-                        if citation_data[4] not in misindexed_ids: 
-                            citation_dict = _construct_citation_dict(citation_data)
-                            citations.append(citation_dict)
-                    elif not journal_drop:
+    citations = []
+    for medline_citation_node in root_node.findall('PubmedArticle/MedlineCitation'):
+        citation_data = _extract_citation_data(medline_citation_node)
+        # Run on everything in a file:
+        if predict_all:
+            citation_dict = _construct_citation_dict(citation_data)
+            citations.append(citation_dict)
+        # Make predictions for only selectively indexed journals
+        # that do not have a MEDLINE and PubMed-not-MEDLINE status yet.
+        # Citations that do not meet this criteria will not be processed,
+        # nor will citations from misindexed journals if
+        # --no-journal-drop is included
+        elif not predict_medline and (citation_data[6] != "MEDLINE" and citation_data[6] != "PubMed-not-MEDLINE"):
+            if citation_data[4] in selectively_indexed_ids:
+                if journal_drop:
+                    if citation_data[4] not in misindexed_ids:
                         citation_dict = _construct_citation_dict(citation_data)
                         citations.append(citation_dict)
-            # Otherwise, make predictions for citations not
-            # from selectively indexed journals 
-            # that HAVE a MEDLINE status
-            # Citations that do not meet this criteria not be processed
-            # This option is exclusively for running on everything not selectively indexed,
-            # therefore the option --no-journal-drop has no effect
-            elif predict_medline and citation_data[6] == "MEDLINE":
-                if citation_data[4] not in selectively_indexed_ids:
+                elif not journal_drop:
                     citation_dict = _construct_citation_dict(citation_data)
                     citations.append(citation_dict)
-            
+        # Otherwise, make predictions for citations not
+        # from selectively indexed journals
+        # that HAVE a MEDLINE status
+        # Citations that do not meet this criteria not be processed
+        # This option is exclusively for running on everything not selectively indexed,
+        # therefore the option --no-journal-drop has no effect
+        elif predict_medline and citation_data[6] == "MEDLINE":
+            if citation_data[4] not in selectively_indexed_ids:
+                citation_dict = _construct_citation_dict(citation_data)
+                citations.append(citation_dict)
+
     # Just in case no citations meet the criteria:
     if len(citations) == 0:
-        print("There are no citations that fit the current criteria. Consider using the --predict-medline or --predict-all options as explained in the documentation. SIS will now exit")
-        sys.exit()
+        msg = "There are no citations that fit the current criteria. Consider using the --predict-medline " \
+              "or --predict-all options as explained in the documentation. SIS will now exit"
+        raise Exception(msg)
         
     return citations    
 
