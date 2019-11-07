@@ -5,6 +5,9 @@ Module contains functions for running models and combining predictions,
 adjusting in-scope predictions, and adjusting predictions for publication type.
 """
 
+import os
+import json
+
 import numpy as np
 from pathlib import Path
 import time
@@ -121,3 +124,63 @@ def filter_pub_type(citations, predictions):
             predictions[i] = 3
 
     return predictions
+# -----------------------------------------------------------------------------------------------------------------------
+
+
+def get_fname(fname, subst: str):
+    if fname is None:
+        fname = "None"
+
+    # Init from supplied file or "standard" place
+    if not os.path.exists(fname):
+        fname_local = resource_filename(__name__, subst)
+        if not os.path.exists(fname_local):
+            msg = "File can't be found neither as \"{}\" nor as \"{}\".".format(fname, fname_local)
+            raise BmCS_Exception(msg)
+        else:
+            fname = fname_local
+
+    return fname
+# -----------------------------------------------------------------------------------------------------------------------
+
+
+def load_cfg(env: str, subst, is_file: bool=False, load: bool=False):
+    value = None
+
+    try:
+        value = os.environ[env]
+        value = None if len(value) == 0 else value
+    except KeyError:
+        # No such environment variable, let it be for now
+        pass
+
+    if is_file:
+        # Get a file name (from environment or from hardcoded places)
+        fname = get_fname(value, subst)
+
+        if not load:
+            return fname
+
+        ids = None
+        with open(fname) as f:
+            ids = json.load(f)
+
+        return ids
+    else:
+        if subst is not None:
+            value = subst
+        else:
+            return None
+        
+        # This is just a environment variable
+        if not isinstance(value, bool) and not isinstance(value, int):
+            m = re.search(r'^\s*(\d+)\s*$', value)
+            if m is not None:
+                value = int(m.group(1))
+            else:
+                m = re.search(r'\s*(true|false)\s*$', value, re.I)
+                if m is not None:
+                    value = True if m.group(1).lower() == 'true' else False
+
+    return value
+# -----------------------------------------------------------------------------------------------------------------------
