@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 setuptools.setup(
         name="BmCS",
-        version="1.0.4",
+        version="1.0.5",
         author="Max Savery, Alistair Rae",
         author_email="savermax@gmail.com",
         description="Biomedical Citation Selector for classification of MEDLINE citations",

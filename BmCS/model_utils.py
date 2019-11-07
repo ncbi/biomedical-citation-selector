@@ -26,6 +26,7 @@ from .thresholds import *
 from . import item_select
 from .publication_types import pub_strings, pub_types
 
+from .bmcs_exceptions import BmCS_Exception
 
 def run_CNN(CNN_path, X):
     """
