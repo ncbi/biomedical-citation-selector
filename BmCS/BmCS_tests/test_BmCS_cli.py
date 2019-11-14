@@ -37,6 +37,13 @@ class test_BmCS_cli(unittest.TestCase):
         Run voting and CNN, combine results,
         adjust decision threshold, and make predictions
         """
+        # For NCBI testing procedure and limits paths are hardcoded
+        cnn_model_path, ensemble_model_path = "./models/model_CNN_weights.hdf5", "./models/ensemble.joblib"
+        if not os.path.isfile(cnn_model_path):
+            cnn_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/model_CNN_weights.hdf5"
+
+        if not os.path.isfile(ensemble_model_path):
+            ensemble_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/ensemble.joblib"
 
         # Use unitttest.mock.patch to simulate command line arguments, so that they can be used 
         # with pytest
@@ -45,8 +52,8 @@ class test_BmCS_cli(unittest.TestCase):
                                 path="null",
                                 group_thresh=False,
                                 journal_drop=True,
-                                CNN_path="./models/model_CNN_weights.hdf5",
-                                ensemble_path="./models/ensemble.joblib",
+                                CNN_path=cnn_model_path,
+                                ensemble_path=ensemble_model_path,
                                 pub_type_filter=True,
                                 destination=".",
                                 validation=False,
