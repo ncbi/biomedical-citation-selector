@@ -5,6 +5,9 @@ Module contains functions for running models and combining predictions,
 adjusting in-scope predictions, and adjusting predictions for publication type.
 """
 
+import os
+import json
+
 import numpy as np
 from pathlib import Path
 import time
@@ -121,3 +124,69 @@ def filter_pub_type(citations, predictions):
             predictions[i] = 3
 
     return predictions
+# -----------------------------------------------------------------------------------------------------------------------
+
+
+def get_fname(fname, base, subst: str):
+
+    if fname is None:
+        fname = ""
+        
+    if base is None:
+        base = ""
+            
+    if subst is None:
+        subst = ""
+
+    for file_name in [fname, os.path.join(base, fname), 
+                             os.path.join(base, subst), 
+                             resource_filename(__name__, subst)]:
+        if os.path.isfile(file_name):
+            return file_name
+
+    # If we are here, file does not exist
+    msg = "File can't be found. fname: \"{}\", base: \"{}\", subst: \"{}\".".format(fname, base, subst)
+    raise BmCS_Exception(msg)
+# -----------------------------------------------------------------------------------------------------------------------
+
+
+def load_cfg(env: str, subst, base: str=None, is_file: bool=False, load: bool=False):
+    value = None
+
+    try:
+        value = os.environ[env]
+        value = None if len(value) == 0 else value
+    except KeyError:
+        # No such environment variable, let it be for now
+        pass
+
+    if is_file:
+        # Get a file name (from environment or from hardcoded places)
+        fname = get_fname(value, base, subst)
+
+        if not load:
+            return fname
+
+        ids = None
+        with open(fname) as f:
+            ids = json.load(f)
+
+        return ids
+    else:
+        if subst is not None:
+            value = subst
+        else:
+            return None
+        
+        # This is just a environment variable
+        if not isinstance(value, bool) and not isinstance(value, int):
+            m = re.search(r'^\s*(\d+)\s*$', value)
+            if m is not None:
+                value = int(m.group(1))
+            else:
+                m = re.search(r'\s*(true|false)\s*$', value, re.I)
+                if m is not None:
+                    value = True if m.group(1).lower() == 'true' else False
+
+    return value
+# -----------------------------------------------------------------------------------------------------------------------
