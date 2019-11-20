@@ -26,6 +26,7 @@ from .thresholds import *
 from . import item_select
 from .publication_types import pub_strings, pub_types
 
+from .bmcs_exceptions import BmCS_Exception
 
 def run_CNN(CNN_path, X):
     """
@@ -127,24 +128,30 @@ def filter_pub_type(citations, predictions):
 # -----------------------------------------------------------------------------------------------------------------------
 
 
-def get_fname(fname, subst: str):
+def get_fname(fname, base, subst: str):
+
     if fname is None:
-        fname = "None"
+        fname = ""
+        
+    if base is None:
+        base = ""
+            
+    if subst is None:
+        subst = ""
 
-    # Init from supplied file or "standard" place
-    if not os.path.exists(fname):
-        fname_local = resource_filename(__name__, subst)
-        if not os.path.exists(fname_local):
-            msg = "File can't be found neither as \"{}\" nor as \"{}\".".format(fname, fname_local)
-            raise BmCS_Exception(msg)
-        else:
-            fname = fname_local
+    for file_name in [fname, os.path.join(base, fname), 
+                             os.path.join(base, subst), 
+                             resource_filename(__name__, subst)]:
+        if os.path.isfile(file_name):
+            return file_name
 
-    return fname
+    # If we are here, file does not exist
+    msg = "File can't be found. fname: \"{}\", base: \"{}\", subst: \"{}\".".format(fname, base, subst)
+    raise BmCS_Exception(msg)
 # -----------------------------------------------------------------------------------------------------------------------
 
 
-def load_cfg(env: str, subst, is_file: bool=False, load: bool=False):
+def load_cfg(env: str, subst, base: str=None, is_file: bool=False, load: bool=False):
     value = None
 
     try:
@@ -156,7 +163,7 @@ def load_cfg(env: str, subst, is_file: bool=False, load: bool=False):
 
     if is_file:
         # Get a file name (from environment or from hardcoded places)
-        fname = get_fname(value, subst)
+        fname = get_fname(value, base, subst)
 
         if not load:
             return fname
