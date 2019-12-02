@@ -40,10 +40,10 @@ class test_BmCS_cli(unittest.TestCase):
         # For NCBI testing procedure and limits paths are hardcoded
         cnn_model_path, ensemble_model_path = "./models/model_CNN_weights.hdf5", "./models/ensemble.joblib"
         if not os.path.isfile(cnn_model_path):
-            cnn_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/model_CNN_weights.hdf5"
+            cnn_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/models/model_CNN_weights.hdf5"
 
         if not os.path.isfile(ensemble_model_path):
-            ensemble_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/ensemble.joblib"
+            ensemble_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/models/ensemble.joblib"
 
         # Use unitttest.mock.patch to simulate command line arguments, so that they can be used 
         # with pytest
