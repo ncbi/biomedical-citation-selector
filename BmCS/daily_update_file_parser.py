@@ -12,6 +12,36 @@ import sys
 import os
 
 
+def parse_update_string(selectively_indexed_ids, xml_string: str):
+    """
+    Main parsing function for BmCS
+
+    Will return list of dictionaries,
+    each dictionary containing data for one citation
+    """
+    root_node = None
+    if xml_string is not None and len(xml_string) > 0:
+        root_node = ET.fromstring(xml_string)
+    else:
+        msg = "XML string not provided."
+        raise Exception(msg)
+
+    citations = []
+    d_sel_indexed = dict()
+
+    for medline_citation_node in root_node.findall('PubmedArticle/MedlineCitation'):
+        citation_data = _extract_citation_data(medline_citation_node)
+        citation_dict = _construct_citation_dict(citation_data)
+        citations.append(citation_dict)
+
+#        pmid, title, abstract, affiliations, journal_nlmid, pub_year, citation_status, pub_type_list
+        pmid, journal_nlmid = citation_data[0], citation_data[4]
+        if journal_nlmid in selectively_indexed_ids:
+            d_sel_indexed[pmid] = journal_nlmid
+
+    return citations, d_sel_indexed
+
+
 def parse_update_file(path, journal_drop, predict_medline, selectively_indexed_ids, predict_all,
                       misindexed_ids, xml_string: str = None):
     """
