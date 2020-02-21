@@ -1,4 +1,4 @@
-from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 import numpy as np
 from nltk.tokenize import word_tokenize
 

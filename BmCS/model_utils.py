@@ -13,8 +13,8 @@ from pathlib import Path
 import time
 from pkg_resources import resource_string, resource_filename
 
-import keras.backend as K
-from keras.models import model_from_json
+import tensorflow.keras.backend as K
+from tensorflow.keras.models import model_from_json
 
 from sklearn.externals import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
