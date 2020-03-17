@@ -20,6 +20,9 @@ from .BmCS_tests.BmCS_test import BmCS_test_main
 from .bmcs_cnn_model import CnnModel
 from .bmcs_scilearn_model import SciLearnModel
 
+import tensorflow as tf
+tf.compat.v1.disable_eager_execution()
+
 def get_args():
     """
     Get command line parser
