@@ -222,7 +222,8 @@ Voting recall
 Voting precision      
 CNN recall    
 CNN precision 
-
+BmCS in-scope recall
+BmCS in-scope precision
 
 Once the program is installed run both of the following commands: 
 ```
