@@ -100,11 +100,11 @@ def BmCS_test_main(
     if not group_thresh and not journal_drop:
         if dataset == "validation":
             assert isclose(cnn_recall, .9952, abs_tol=1e-4), "CNN recall does not match expected value"
-            assert isclose(cnn_precision, .3508, abs_tol=1e-4), "CNN precision does not match expected value"
+            assert isclose(cnn_precision, .3508, abs_tol=1.5e-4), "CNN precision does not match expected value"
             assert isclose(voting_recall, .9952, abs_tol=1e-4), "Voting recall does not match expected value"
             assert isclose(voting_precision, .3030, abs_tol=1e-4), "Voting precision does not match expected value"
             assert isclose(BmCS_recall, .9952, abs_tol=1e-4), "BmCS recall does not match expected value"
-            assert isclose(BmCS_precision, .3858, abs_tol=1e-4), "BmCS precision does not match expected value"
+            assert isclose(BmCS_precision, .3858, abs_tol=1.5e-4), "BmCS precision does not match expected value"
             print("Assertions passed")
         else:
             assert isclose(cnn_recall, .9946, abs_tol=1e-4), "CNN recall does not match expected value" 
