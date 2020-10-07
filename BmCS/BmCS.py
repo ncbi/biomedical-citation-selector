@@ -64,6 +64,10 @@ def get_args():
                         dest="test",
                         action="store_true",
                         help="If included, test the system on the test dataset. Will output metrics to BmCS_test_results.txt")
+    parser.add_argument("--tolerance",
+                        type=float,
+                        default=1e-4,
+                        help="Tolerance used by test assertions.")
     parser.add_argument("--predict-medline",
                         dest="predict_medline",
                         action="store_true",
