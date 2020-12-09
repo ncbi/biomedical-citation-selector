@@ -140,7 +140,6 @@ def BmCS_test_main(
     # Values computed using generate_validation_vs_test_vs_group_thresholds.py, not included in this repository.
     if not group_thresh and not journal_drop:
         if dataset == "validation":
-
             BmCS_recall = .9952
             BmCS_precision = .3858
             BmCS_in_scope_recall = .4573
