@@ -1,6 +1,5 @@
 """
 Main module to Run BmCS
-
 BmCS is a machine learning system for classification of selectively indexed citations.
 This module establishes command line arguments and provides code to run the system
 """
@@ -82,7 +81,6 @@ def get_args():
 def save_predictions(adjusted_predictions, prediction_dict, pmids, destination):
     """
     Save predictions to file in format
-
     pmid|binary prediction|probability|journal
     """
     
