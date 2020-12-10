@@ -90,28 +90,3 @@ def BmCS_test_main(
     adjusted_predictions = adjust_in_scope_predictions(adjusted_predictions, prediction_dict)
 
     cnn_recall, cnn_precision, voting_recall, voting_precision = evaluate_individual_models(cnn_predictions, voting_predictions, labels, group_thresh, journal_ids, group_ids)
-
-    all_pos_pred = [1 if pred == 1 or pred == 2 else 0 for pred in adjusted_predictions]
-    BmCS_recall = recall_score(labels, all_pos_pred, pos_label=1)
-    BmCS_precision = precision_score(labels, all_pos_pred, pos_label=1)
-
-    in_scope_preds = [1 if pred == 1 else 0 for pred in adjusted_predictions]
-    BmCS_in_scope_recall = recall_score(labels, in_scope_preds, pos_label=1)
-    BmCS_in_scope_precision = precision_score(labels, in_scope_preds, pos_label=1)
-
-    results_path = "{}/BmCS_test_results.txt".format(destination)
-    with open(results_path, "a") as f:
-        f.write("\n\n")
-        for arg in vars(args):
-            f.write("{0}: {1}\n".format(arg, vars(args)[arg]))
-        f.write("""BmCS recall: {0}\nBmCS precision: {1}\nVoting recall: {2}\nVoting precision: {3}\nCNN recall: {4}\nCNN precision: {5}\nBmCS in-scope recall: {6}\nBmCS in-scope precision: {7}\n""".format(
-                BmCS_recall,
-                BmCS_precision,
-                voting_recall,
-                voting_precision,
-                cnn_recall,
-                cnn_precision,
-                BmCS_in_scope_recall,
-                BmCS_in_scope_precision))
-
-    # Values computed using generate_validation_vs_test_vs_group_thresholds.py, not included in this repository.
