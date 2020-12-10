@@ -84,9 +84,3 @@ def BmCS_test_main(
     voting_predictions = run_voting(args.ensemble_path, voting_citations)
     CNN_citations = get_batch_data(citations, journal_ids_path, word_indicies_path)
     cnn_predictions = run_CNN(args.CNN_path, CNN_citations)
-    combined_predictions = combine_predictions(voting_predictions, cnn_predictions)
-    prediction_dict = {'predictions': combined_predictions, 'journal_ids': journal_ids}
-    adjusted_predictions = adjust_thresholds(prediction_dict, group_ids, group_thresh) 
-    adjusted_predictions = adjust_in_scope_predictions(adjusted_predictions, prediction_dict)
-
-    cnn_recall, cnn_precision, voting_recall, voting_precision = evaluate_individual_models(cnn_predictions, voting_predictions, labels, group_thresh, journal_ids, group_ids)
