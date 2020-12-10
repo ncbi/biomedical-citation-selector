@@ -117,14 +117,6 @@ def BmCS_test_main(
     # Values computed using generate_validation_vs_test_vs_group_thresholds.py, not included in this repository.
     if not group_thresh and not journal_drop:
         if dataset == "validation":
-<<<<<<< HEAD
-            BmCS_recall = .9952
-            BmCS_precision = .3858
-            BmCS_in_scope_recall = .4573
-            BmCS_in_scope_precision = .9709
-
-=======
->>>>>>> development
             assert isclose(BmCS_recall, .9952, abs_tol=args.tolerance), "BmCS recall does not match expected value"
             assert isclose(BmCS_precision, .3858, abs_tol=args.tolerance), "BmCS precision does not match expected value"
             assert isclose(BmCS_in_scope_recall, .4573, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
