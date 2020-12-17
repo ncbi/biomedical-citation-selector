@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 setuptools.setup(
         name="BmCS",
-        version="1.22",
+        version="1.23",
         author="Max Savery, Alastair Rae",
         author_email="savermax@gmail.com",
         description="Biomedical Citation Selector for classification of MEDLINE citations",
@@ -24,10 +24,10 @@ setuptools.setup(
             ],
         install_requires=[
             "scikit-learn==0.20.2",
-            "tensorflow==2.0.3",
-            "numpy==1.18.5",
-            "python-dateutil",
-            "nltk"
+            "tensorflow==2.3.1",
+            "python-dateutil==2.8.1",
+            "nltk==3.4.5",
+            "h5py==2.10.0"
             ],
         package_data={
             'BmCS': [
@@ -36,4 +36,3 @@ setuptools.setup(
                 "BmCS_tests/datasets/*"
                 ]},
         )
-
