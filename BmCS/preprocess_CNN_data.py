@@ -36,7 +36,7 @@ def get_batch_data(citations, journal_ids_path, word_indices_path):
 
     journal_input = np.array(journal_indices, dtype=np.uint16).reshape(-1, 1)
 
-    batch_x = { 'pmids': pmids, 'title_input': title_input, 'abstract_input': abstract_input, 'pub_year_input': pub_year_input, 'year_completed_input': year_completed_input, 'journal_input': journal_input}
+    batch_x = { 'title_input': title_input, 'abstract_input': abstract_input, 'pub_year_input': pub_year_input, 'year_completed_input': year_completed_input, 'journal_input': journal_input}
     return batch_x
 
 
