@@ -24,7 +24,7 @@ setuptools.setup(
             ],
         install_requires=[
             "scikit-learn==0.20.2",
-            "tensorflow==2.3.1",
+            "tensorflow==2.4.0",
             "python-dateutil==2.8.1",
             "nltk==3.4.5",
             "h5py==2.10.0",
