@@ -107,7 +107,7 @@ def _construct_citation_dict(citation_data):
         'pmid': pmid, 
         'title': title, 
         'abstract': abstract, 
-        'author_list': affiliations,
+        'affiliations': affiliations,
         'journal_nlmid': journal_nlmid, 
         'pub_year': pub_year,
         'pub_type': pub_type_list,

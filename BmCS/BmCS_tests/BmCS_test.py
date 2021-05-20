@@ -12,8 +12,9 @@ import sys
 
 from ..model_utils import *
 from ..preprocess_CNN_data import get_batch_data
-from .preprocess_voting_data_test import preprocess_data
+from ..preprocess_voting_data import preprocess_data
 from ..thresholds import *
+import gzip
 
 
 def parse_test_citations(XML_path, journal_drop, misindexed_ids):
@@ -21,7 +22,7 @@ def parse_test_citations(XML_path, journal_drop, misindexed_ids):
     Parse the test citations from json
     """
     
-    with open(XML_path) as f:
+    with gzip.open(XML_path, "rt", encoding="utf8") as f:
         citations = json.load(f) 
 
     if journal_drop:
@@ -32,7 +33,7 @@ def parse_test_citations(XML_path, journal_drop, misindexed_ids):
 
 def evaluate_individual_models(cnn_predictions, voting_predictions, labels, group_thresh, journal_ids, group_ids):
     """
-    Evaluate the performance of each model individuall 
+    Evaluate the performance of each model individually
     
     For the the CNN and voting ensemble, using the validation or test data sets, calculate metrics. 
     Returns precision and recall for each model.
@@ -75,12 +76,13 @@ def BmCS_test_main(
     """
 
     if dataset == "validation":
-        XML_path = resource_filename(__name__, "datasets/pipeline_validation_set.json")
+        XML_path = resource_filename(__name__, "datasets/validation_set.json.gz")
     else:
-        XML_path = resource_filename(__name__, "datasets/pipeline_test_set.json")
+        XML_path = resource_filename(__name__, "datasets/test_set.json.gz")
    
     citations = parse_test_citations(XML_path, journal_drop, misindexed_ids) 
-    voting_citations, journal_ids, labels = preprocess_data(citations)
+    voting_citations, journal_ids, _ = preprocess_data(citations)
+    labels = [c["is_indexed"] for c in citations]
     voting_predictions = run_voting(args.ensemble_path, voting_citations)
     CNN_citations = get_batch_data(citations, journal_ids_path, word_indicies_path)
     cnn_predictions = run_CNN(args.CNN_path, CNN_citations)
@@ -117,14 +119,14 @@ def BmCS_test_main(
     # Values computed using generate_validation_vs_test_vs_group_thresholds.py, not included in this repository.
     if not group_thresh and not journal_drop:
         if dataset == "validation":
-            assert isclose(BmCS_recall, .9952, abs_tol=args.tolerance), "BmCS recall does not match expected value"
-            assert isclose(BmCS_precision, .3858, abs_tol=args.tolerance), "BmCS precision does not match expected value"
-            assert isclose(BmCS_in_scope_recall, .4573, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
-            assert isclose(BmCS_in_scope_precision, .9709, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
+            assert isclose(BmCS_recall, 0.9951, abs_tol=args.tolerance), "BmCS recall does not match expected value"
+            assert isclose(BmCS_precision, 0.5126, abs_tol=args.tolerance), "BmCS precision does not match expected value"
+            assert isclose(BmCS_in_scope_recall, 0.5967, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
+            assert isclose(BmCS_in_scope_precision, 0.9701, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
             print("Assertions passed")
         else:
-            assert isclose(BmCS_recall, .9935, abs_tol=args.tolerance), "BmCS recall does not match expected value"
-            assert isclose(BmCS_precision, .3795, abs_tol=args.tolerance), "BmCS precision does not match expected value"
-            assert isclose(BmCS_in_scope_recall, .4607, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
-            assert isclose(BmCS_in_scope_precision, .9614, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
+            assert isclose(BmCS_recall, 0.9943, abs_tol=args.tolerance), "BmCS recall does not match expected value"
+            assert isclose(BmCS_precision, 0.5118, abs_tol=args.tolerance), "BmCS precision does not match expected value"
+            assert isclose(BmCS_in_scope_recall, 0.5990, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
+            assert isclose(BmCS_in_scope_precision, 0.9688, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
             print("Assertions passed")

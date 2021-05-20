@@ -16,7 +16,7 @@ from pkg_resources import resource_string, resource_filename
 import tensorflow.keras.backend as K
 from tensorflow.keras.models import model_from_json
 
-from sklearn.externals import joblib
+import joblib
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.metrics import classification_report
@@ -27,6 +27,7 @@ from . import item_select
 from .publication_types import pub_strings, pub_types
 
 from .bmcs_exceptions import BmCS_Exception
+
 
 def run_CNN(CNN_path, X):
     """
