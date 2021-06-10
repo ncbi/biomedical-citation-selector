@@ -1,7 +1,6 @@
 # Biomedical Citation Selector (BmCS)
 
-This repository contains the source code for the BmCS system, to be used for the prediction of citations requiring MeSH indexing
-This README includes the following sections
+This repository contains the source code for the BmCS system, to be used for the prediction of citations requiring MeSH indexing. This README includes the following sections:
 
 Installation           
 Usage        
@@ -10,12 +9,12 @@ Testing
 
 ## Installation
 
-Installation has been tested with Ubuntu 16.04. While this installation will likely work with Windows, this cannot be guaranteed. 
+Installation has been tested with Ubuntu 20.04. While this installation will likely work with Windows, this cannot be guaranteed. 
 
-Is anaconda or miniconda installed? Is python 3.6 installed? If so, skip to section ii.
+Is anaconda or miniconda installed? Is python 3.9 installed? If so, skip to section ii.
 If you do not have anaconda, or miniconda, and python installed, follow the instructions in i.
 
-Note that this package requires python 3.6.
+Note that this package requires python 3.9.
 
 ### i
 Included in this section are instructions to install miniconda, a lightweight version of anaconda. In installing miniconda, python and 
@@ -32,10 +31,10 @@ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 Maneuver through its direction. Make sure to enter yes when it asks to add the miniconda path to the .bashrc
 
-Testing was done using python 3.6, and the right combination of tensorflow and python can be finicky. Since the latest miniconda comes with python 3.7 (as of March 2019), we will have to downgrade.
-Fortunately, this is easy:
+Next, create an anaconda enviroment with python 3.9.
 ```
-conda install python=3.6
+conda create -n bmcs_env python=3.9
+conda activate bmcs_env
 ```
 
 Finally, check your python version. 
@@ -43,7 +42,7 @@ Finally, check your python version.
 python --version
 ```
 
-If python == 3.6, continue on to section ii. If not, return to go, and maybe email someone for help.
+If python == 3.9.x, continue on to section ii. If not, return to go, and maybe email someone for help.
 
 ### ii
 
@@ -51,26 +50,27 @@ There are two options for installation of BmCS. You can either download the .whl
 and generate the .whl file yourself. This section first describes how to generate the .whl, and then describes how to install it.  
 
 #### Build .whl
-Clone this repository 
+Clone this repository:
 ```
-git clone https://github.com/saverymax/selective_indexing.git
+git clone https://github.com/ncbi/biomedical-citation-selector.git
 ```
 Once the repository is cloned, navigate into the BmCS directory where the setup.py file lives. 
 
-From the command line run
+From the command line run:
 ```
 python setup.py bdist_wheel
 ```
 This will create a dist directory and create a .whl file inside. The .whl file is the compressed package. 
 
 #### Download wheel and installation
-The .whl file can be found in the releases section of this repository: https://github.com/saverymax/selective_indexing/releases
-Under Assets, click on the BmCS-1.0.0-py3-none-any.whl link to download. You should also download the ensemble.joblib
-and model_CNN_weights.hdf5 files, whether or not built the wheel yourself or downloaded it. 
+The .whl file can be found in the releases section of this repository: https://github.com/ncbi/biomedical-citation-selector/releases
 
-Assuming you have downloaded the .whl file, navigate to the directory where it lives and run
+Under Assets, click on the BmCS-2.0.0-py3-none-any.whl link to download. You should also download the ensemble.joblib
+and model_CNN_weights.hdf5 files, whether or not you built the wheel yourself or downloaded it. 
+
+Assuming you have downloaded the .whl file, navigate to the directory where it lives and run:
 ```
-pip install BmCS-1.0.0-py3-none-any.whl
+pip install BmCS-2.0-py3-none-any.whl
 ```
 If all goes well, you have now installed the Biomedical Citation Selector (BmCS). Congratulations!
 BmCS has been added to PATH, and is executable from the command line. 
@@ -85,7 +85,7 @@ reinstall BmCS. To install:
 python -m nltk.downloader punkt
 ```
 
-To uninstall
+To uninstall:
 ```
 pip uninstall BmCS
 ```
@@ -98,7 +98,7 @@ The models are not included in the package in this version of the system. Howeve
 Once downloaded, the paths to the models should be provided via the command line.
 
 ### For NCBI usage
-To run BmCS
+To run BmCS:
 ```
 BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml 
 ```
@@ -125,17 +125,17 @@ In the prediction field, 4 labels are possible:
 If the --filter option is provided, there are a few ways to filter and adjust the predictions.
 The flags shown here are explained in more detail in the section below. 
 
-To make predictions solely for selectively indexed journals with statuses not MEDLINE or PubMed-not-MEDLINE
+To make predictions solely for selectively indexed journals with statuses not MEDLINE or PubMed-not-MEDLINE:
 ```
 BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter
 ```
 
-To mark the citations mentioned above that are of publication types such as comments or erratum with a 3 in the predictions 
+To mark the citations mentioned above that are of publication types such as comments or erratum with a 3 in the predictions:
 ```
 BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter --pubtype-filter
 ```
 
-To make predictions for citations only of status MEDLINE
+To make predictions for citations only of status MEDLINE:
 ```
 BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter --predict-medline
 ```
@@ -146,11 +146,11 @@ BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citatio
     Required. Positional. Path to CNN weights.  
 
 **ensemble_path** 
-    Required. Positional. Path to ensemble model
+    Required. Positional. Path to ensemble model.
 
 **--path /path/to/citations.xml** 
     Path to XML of citations for the system to classify. Include the file.xml in the path. 
-    Do not include with --test or --validation
+    Do not include with --test or --validation.
 
 **--dest dir/for/results/** 
     Optional. Destination for predictions, or test results if --test or --validation are used. Defaults to 
@@ -184,14 +184,14 @@ BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citatio
     --filter must be included to use this option.
 
 **--validation** 
-    Optional. Include to run system on 2018 validation dataset. Do not include --path if
+    Optional. Include to run system on validation dataset. Do not include --path if
     --validation included.  
 
 **--test**
-    Optional. Include to run system on 2018 test dataset. Do not include --path if
+    Optional. Include to run system on test dataset. Do not include --path if
     --test included. 
 
-If you forget your options, input
+If you forget your options, input:
 ```
 BmCS --help
 ```

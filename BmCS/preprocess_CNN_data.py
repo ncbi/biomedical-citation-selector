@@ -7,7 +7,7 @@ TITLE_MAX_WORDS = 64
 ABSTRACT_MAX_WORDS = 448
 MIN_PUB_YEAR = 1809 
 MIN_YEAR_COMPLETED = 1965
-MODEL_MAX_YEAR = 2018
+MODEL_MAX_YEAR = 2017
 UNKNOWN_JOURNAL_INDEX = 0
 UNKNOWN_WORD_INDEX = 1
 PADDING_INDEX = 0
@@ -26,15 +26,15 @@ def get_batch_data(citations, journal_ids_path, word_indices_path):
     num_pub_year_time_periods = 1 + MODEL_MAX_YEAR - MIN_PUB_YEAR
     num_year_completed_time_periods = 1 + MODEL_MAX_YEAR - MIN_YEAR_COMPLETED
 
-    pub_years = np.array(pub_years, dtype=np.uint16).reshape(-1, 1)
+    pub_years = np.array(pub_years, dtype=np.int32).reshape(-1, 1)
     pub_year_indices = pub_years - MIN_PUB_YEAR
     pub_year_input = _to_time_period_input(pub_year_indices, num_pub_year_time_periods)
 
-    year_completed = np.array(year_completed, dtype=np.uint16).reshape(-1, 1)
+    year_completed = np.array(year_completed, dtype=np.int32).reshape(-1, 1)
     year_completed_indices = year_completed - MIN_YEAR_COMPLETED
     year_completed_input = _to_time_period_input(year_completed_indices, num_year_completed_time_periods)
 
-    journal_input = np.array(journal_indices, dtype=np.uint16).reshape(-1, 1)
+    journal_input = np.array(journal_indices, dtype=np.int32).reshape(-1, 1)
 
     batch_x = { 'title_input': title_input, 'abstract_input': abstract_input, 'pub_year_input': pub_year_input, 'year_completed_input': year_completed_input, 'journal_input': journal_input}
     return batch_x
@@ -60,6 +60,8 @@ def _extract_data(citations, journal_index_lookup):
             pub_year = MODEL_MAX_YEAR
         if pub_year > MODEL_MAX_YEAR:
             pub_year = MODEL_MAX_YEAR
+        if pub_year < MIN_PUB_YEAR:
+            pub_year = MIN_PUB_YEAR
         pub_years.append(pub_year)
         year_completed.append(MODEL_MAX_YEAR)
         journal_index = UNKNOWN_JOURNAL_INDEX
@@ -72,11 +74,11 @@ def _extract_data(citations, journal_index_lookup):
 
 def _to_time_period_input(year_indices, num_time_periods):
     batch_size = year_indices.shape[0]
-    batch_indices = np.zeros([batch_size, num_time_periods], np.uint16)
+    batch_indices = np.zeros([batch_size, num_time_periods], np.int32)
     batch_indices[np.arange(batch_size)] = np.arange(num_time_periods)
     year_indices_rep = np.repeat(year_indices, num_time_periods, axis=1)
     time_period_input = batch_indices <= year_indices_rep
-    time_period_input = time_period_input.astype(np.uint8)
+    time_period_input = time_period_input.astype(np.int32)
     return time_period_input
 
 

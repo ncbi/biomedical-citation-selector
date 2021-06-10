@@ -1,6 +1,6 @@
 import os
 
-from sklearn.externals import joblib
+import joblib
 
 from .bmcs_basemodel import BaseModel
 from .bmcs_exceptions import BmCS_Exception
