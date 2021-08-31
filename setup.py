@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
     long_description = f.read()
 setuptools.setup(
         name="BmCS",
-        version="2.1.1",
+        version="2.1.3",
         author="Max Savery, Alastair Rae",
         author_email="alastair.rae@nih.gov",
         description="Biomedical Citation Selector for classification of MEDLINE citations",
@@ -24,7 +24,7 @@ setuptools.setup(
             ],
         install_requires=[
             "scikit-learn==0.24.1",
-            "tensorflow==2.5.0",
+            "tensorflow==2.5.1",
             "python-dateutil==2.8.1",
             "nltk==3.6.1",
             "h5py==3.1.0",
