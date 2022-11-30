@@ -70,7 +70,7 @@ and model_CNN_weights.hdf5 files, whether or not you built the wheel yourself or
 
 Assuming you have downloaded the .whl file, navigate to the directory where it lives and run:
 ```
-pip install BmCS-2.0-py3-none-any.whl
+pip install BmCS-3.0.0-py3-none-any.whl
 ```
 If all goes well, you have now installed the Biomedical Citation Selector (BmCS). Congratulations!
 BmCS has been added to PATH, and is executable from the command line. 
