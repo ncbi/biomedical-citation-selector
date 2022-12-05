@@ -10,7 +10,7 @@ and not in the production model.
 # Threshold to label citations as out of scope, at a 99.5% confidence level
 COMBINED_THRESH = 0.00135
 # Threshold to label citations as in scope, at a 97% confidence level
-PRECISION_THRESH = 0.64195
+PRECISION_THRESH = 0.6053
 
 # Voting threshold
 # Used for testing performance
