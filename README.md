@@ -65,12 +65,12 @@ This will create a dist directory and create a .whl file inside. The .whl file i
 #### Download wheel and installation
 The .whl file can be found in the releases section of this repository: https://github.com/ncbi/biomedical-citation-selector/releases
 
-Under Assets, click on the BmCS-3.1.0-py3-none-any.whl link to download. You should also download the ensemble_model_v3_1_0.joblib
-and cnn_model_v3_1_0.hdf5 files, whether or not you built the wheel yourself or downloaded it. 
+Under Assets, click on the BmCS-3.1.2-py3-none-any.whl link to download. You should also download the ensemble_model_v3_1_2.joblib
+and cnn_model_v3_1_2.hdf5 files, whether or not you built the wheel yourself or downloaded it. 
 
 Assuming you have downloaded the .whl file, navigate to the directory where it lives and run:
 ```
-pip install BmCS-3.1.0-py3-none-any.whl
+pip install BmCS-3.1.2-py3-none-any.whl
 ```
 If all goes well, you have now installed the Biomedical Citation Selector (BmCS). Congratulations!
 BmCS has been added to PATH, and is executable from the command line. 

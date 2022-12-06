@@ -8,9 +8,9 @@ and not in the production model.
 """
 
 # Threshold to label citations as out of scope, at a 99.5% confidence level
-COMBINED_THRESH = 0.00135
+COMBINED_THRESH = 0.00375
 # Threshold to label citations as in scope, at a 97% confidence level
-PRECISION_THRESH = 0.6053
+PRECISION_THRESH = 0.53375
 
 # Voting threshold
 # Used for testing performance
@@ -20,7 +20,7 @@ VOTING_SCIENCE_THRESH = .075
 
 # CNN thresholds
 # Used for testing performance
-CNN_THRESH = 0.01325
+CNN_THRESH = 0.04285
 CNN_JURISPRUDENCE_THRESH = .45
 CNN_SCIENCE_THRESH = .15
 
