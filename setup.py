@@ -28,7 +28,7 @@ setuptools.setup(
             "python-dateutil==2.8.1",
             "nltk==3.6.1",
             "h5py==3.1.0",
-            "numpy==1.19.5",
+            "numpy==1.22.0",
             "six==1.15.0",
             "protobuf==3.20.3",
             ],
