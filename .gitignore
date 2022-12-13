@@ -3,3 +3,4 @@ dist/
 BmCS.egg-info
 __pycache__/
 *.sh
+.vscode/
