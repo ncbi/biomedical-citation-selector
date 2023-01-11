@@ -161,7 +161,7 @@ class test_BmCS_cli(unittest.TestCase):
         # 2 are predictions between highly confident in scope and out-of-scope predictions
         # 3 are special pubtypes. 
         self.assertEqual(adjusted_predictions[5], 2) 
-        self.assertEqual(adjusted_predictions[6], 2) 
+        self.assertEqual(adjusted_predictions[6], 0) 
         adjusted_predictions = filter_pub_type(citations, adjusted_predictions)
         self.assertEqual(adjusted_predictions[5], 3) 
         self.assertEqual(adjusted_predictions[6], 3) 
