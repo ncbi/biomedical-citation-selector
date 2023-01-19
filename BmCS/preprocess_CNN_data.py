@@ -1,4 +1,5 @@
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+import math
 import numpy as np
 from nltk.tokenize import word_tokenize
 
@@ -7,7 +8,8 @@ TITLE_MAX_WORDS = 64
 ABSTRACT_MAX_WORDS = 448
 MIN_PUB_YEAR = 1809 
 MIN_YEAR_COMPLETED = 1965
-MODEL_MAX_YEAR = 2017
+MODEL_MAX_YEAR = 2021
+TIME_PERIOD_SIZE = 5
 UNKNOWN_JOURNAL_INDEX = 0
 UNKNOWN_WORD_INDEX = 1
 PADDING_INDEX = 0
@@ -23,16 +25,10 @@ def get_batch_data(citations, journal_ids_path, word_indices_path):
     title_input = _vectorize_batch_text(word_indices_lookup, titles, TITLE_MAX_WORDS)
     abstract_input = _vectorize_batch_text(word_indices_lookup, abstracts, ABSTRACT_MAX_WORDS)
 
-    num_pub_year_time_periods = 1 + MODEL_MAX_YEAR - MIN_PUB_YEAR
-    num_year_completed_time_periods = 1 + MODEL_MAX_YEAR - MIN_YEAR_COMPLETED
-
-    pub_years = np.array(pub_years, dtype=np.int32).reshape(-1, 1)
-    pub_year_indices = pub_years - MIN_PUB_YEAR
-    pub_year_input = _to_time_period_input(pub_year_indices, num_pub_year_time_periods)
-
-    year_completed = np.array(year_completed, dtype=np.int32).reshape(-1, 1)
-    year_completed_indices = year_completed - MIN_YEAR_COMPLETED
-    year_completed_input = _to_time_period_input(year_completed_indices, num_year_completed_time_periods)
+    num_pub_year_time_periods = _num_time_periods(MIN_PUB_YEAR)
+    num_year_completed_time_periods = _num_time_periods(MIN_YEAR_COMPLETED)
+    pub_year_input =       _create_year_input(pub_years     , MIN_PUB_YEAR      , num_pub_year_time_periods      )
+    year_completed_input = _create_year_input(year_completed, MIN_YEAR_COMPLETED, num_year_completed_time_periods)
 
     journal_input = np.array(journal_indices, dtype=np.int32).reshape(-1, 1)
 
@@ -47,6 +43,16 @@ def _create_lookup(path):
             id, value = line.split('\t')
             lookup[value.strip()] = int(id)
     return lookup
+
+
+def _create_year_input(year_data, min_year, num_time_periods):
+    year_data = np.array(year_data, dtype=np.int32).reshape(-1, 1)
+    year_data = np.clip(year_data, a_min=min_year, a_max=MODEL_MAX_YEAR)
+    year_indices = MODEL_MAX_YEAR - year_data
+    year_indices = np.floor_divide(year_indices, TIME_PERIOD_SIZE)
+    year_indices = num_time_periods - year_indices - 1
+    year_input = _to_time_period_input(year_indices, num_time_periods)
+    return year_input
 
 
 def _extract_data(citations, journal_index_lookup):
@@ -70,6 +76,13 @@ def _extract_data(citations, journal_index_lookup):
            journal_index = journal_index_lookup[journal_nlmid]
         journal_indices.append(journal_index)
     return pmids, titles, abstracts, pub_years, year_completed, journal_indices
+
+
+def _num_time_periods(min_year):
+    num_years = (MODEL_MAX_YEAR - min_year) + 1
+    num_periods = num_years / TIME_PERIOD_SIZE
+    num_periods = math.ceil(num_periods)
+    return num_periods
 
 
 def _to_time_period_input(year_indices, num_time_periods):

@@ -80,7 +80,7 @@ def BmCS_test_main(
     else:
         XML_path = resource_filename(__name__, "datasets/test_set.json.gz")
    
-    citations = parse_test_citations(XML_path, journal_drop, misindexed_ids) 
+    citations = parse_test_citations(XML_path, journal_drop, misindexed_ids)
     voting_citations, journal_ids, _ = preprocess_data(citations)
     labels = [c["is_indexed"] for c in citations]
     voting_predictions = run_voting(args.ensemble_path, voting_citations)
@@ -119,14 +119,14 @@ def BmCS_test_main(
     # Values computed using generate_validation_vs_test_vs_group_thresholds.py, not included in this repository.
     if not group_thresh and not journal_drop:
         if dataset == "validation":
-            assert isclose(BmCS_recall, 0.9952706253284288, abs_tol=args.tolerance), "BmCS recall does not match expected value"
-            assert isclose(BmCS_precision, 0.35035146133925266, abs_tol=args.tolerance), "BmCS precision does not match expected value"
-            assert isclose(BmCS_in_scope_recall, 0.42196531791907516, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
-            assert isclose(BmCS_in_scope_precision, 0.970392749244713, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
+            assert isclose(BmCS_recall, 0.8318713450292398, abs_tol=args.tolerance), "BmCS recall does not match expected value"
+            assert isclose(BmCS_precision, 0.9256547909549374, abs_tol=args.tolerance), "BmCS precision does not match expected value"
+            assert isclose(BmCS_in_scope_recall, 0.8318713450292398, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
+            assert isclose(BmCS_in_scope_precision, 0.9256547909549374, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
             print("Assertions passed")
         else:
-            assert isclose(BmCS_recall, 0.9928080050031269, abs_tol=args.tolerance), "BmCS recall does not match expected value"
-            assert isclose(BmCS_precision, 0.33884738527214514, abs_tol=args.tolerance), "BmCS precision does not match expected value"
-            assert isclose(BmCS_in_scope_recall, 0.42933083176985615, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
-            assert isclose(BmCS_in_scope_precision, 0.9561281337047354, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
+            assert isclose(BmCS_recall, 0.8354484528732354, abs_tol=args.tolerance), "BmCS recall does not match expected value"
+            assert isclose(BmCS_precision, 0.9207920792079208, abs_tol=args.tolerance), "BmCS precision does not match expected value"
+            assert isclose(BmCS_in_scope_recall, 0.8354484528732354, abs_tol=args.tolerance), "BmCS in-scope recall does not match expected value"
+            assert isclose(BmCS_in_scope_precision, 0.9207920792079208, abs_tol=args.tolerance), "BmCS in-scope precision does not match expected value"
             print("Assertions passed")

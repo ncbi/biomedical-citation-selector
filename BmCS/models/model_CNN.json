@@ -810,21 +810,6 @@
                 ]
             },
             {
-                "class_name": "InputLayer",
-                "config": {
-                    "batch_input_shape": [
-                        null,
-                        1
-                    ],
-                    "dtype": "float32",
-                    "sparse": false,
-                    "ragged": false,
-                    "name": "journal_input"
-                },
-                "name": "journal_input",
-                "inbound_nodes": []
-            },
-            {
                 "class_name": "Flatten",
                 "config": {
                     "name": "flatten",
@@ -945,44 +930,6 @@
                 ]
             },
             {
-                "class_name": "Embedding",
-                "config": {
-                    "name": "embedding",
-                    "trainable": true,
-                    "batch_input_shape": [
-                        null,
-                        null
-                    ],
-                    "dtype": "float32",
-                    "input_dim": 33854,
-                    "output_dim": 50,
-                    "embeddings_initializer": {
-                        "class_name": "RandomUniform",
-                        "config": {
-                            "minval": -0.05,
-                            "maxval": 0.05,
-                            "seed": null
-                        }
-                    },
-                    "embeddings_regularizer": null,
-                    "activity_regularizer": null,
-                    "embeddings_constraint": null,
-                    "mask_zero": false,
-                    "input_length": null
-                },
-                "name": "embedding",
-                "inbound_nodes": [
-                    [
-                        [
-                            "journal_input",
-                            0,
-                            0,
-                            {}
-                        ]
-                    ]
-                ]
-            },
-            {
                 "class_name": "Concatenate",
                 "config": {
                     "name": "concatenate",
@@ -1051,7 +998,7 @@
                 "config": {
                     "batch_input_shape": [
                         null,
-                        209
+                        43
                     ],
                     "dtype": "float32",
                     "sparse": false,
@@ -1066,7 +1013,7 @@
                 "config": {
                     "batch_input_shape": [
                         null,
-                        53
+                        12
                     ],
                     "dtype": "float32",
                     "sparse": false,
@@ -1075,26 +1022,6 @@
                 },
                 "name": "year_completed_input",
                 "inbound_nodes": []
-            },
-            {
-                "class_name": "Flatten",
-                "config": {
-                    "name": "flatten_6",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "data_format": "channels_last"
-                },
-                "name": "flatten_6",
-                "inbound_nodes": [
-                    [
-                        [
-                            "embedding",
-                            0,
-                            0,
-                            {}
-                        ]
-                    ]
-                ]
             },
             {
                 "class_name": "Dropout",
@@ -1185,28 +1112,6 @@
                 ]
             },
             {
-                "class_name": "Dropout",
-                "config": {
-                    "name": "dropout_4",
-                    "trainable": true,
-                    "dtype": "float32",
-                    "rate": 0.0,
-                    "noise_shape": null,
-                    "seed": null
-                },
-                "name": "dropout_4",
-                "inbound_nodes": [
-                    [
-                        [
-                            "flatten_6",
-                            0,
-                            0,
-                            {}
-                        ]
-                    ]
-                ]
-            },
-            {
                 "class_name": "Concatenate",
                 "config": {
                     "name": "concatenate_2",
@@ -1237,12 +1142,6 @@
                         ],
                         [
                             "dropout_3",
-                            0,
-                            0,
-                            {}
-                        ],
-                        [
-                            "dropout_4",
                             0,
                             0,
                             {}
@@ -1356,14 +1255,14 @@
             {
                 "class_name": "Dropout",
                 "config": {
-                    "name": "dropout_5",
+                    "name": "dropout_4",
                     "trainable": true,
                     "dtype": "float32",
                     "rate": 0.5,
                     "noise_shape": null,
                     "seed": null
                 },
-                "name": "dropout_5",
+                "name": "dropout_4",
                 "inbound_nodes": [
                     [
                         [
@@ -1404,7 +1303,7 @@
                 "inbound_nodes": [
                     [
                         [
-                            "dropout_5",
+                            "dropout_4",
                             0,
                             0,
                             {}
@@ -1431,11 +1330,6 @@
             ],
             [
                 "year_completed_input",
-                0,
-                0
-            ],
-            [
-                "journal_input",
                 0,
                 0
             ]

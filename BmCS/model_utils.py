@@ -71,7 +71,7 @@ def adjust_thresholds(predictions_dict, group_ids, group_thresh):
     print("Combining predictions")
 
     if not group_thresh:
-        return [2 if y >= COMBINED_THRESH else 0 for y in predictions_dict['predictions']]
+        return [2 if y > COMBINED_THRESH else 0 for y in predictions_dict['predictions']]
 
     else:
         predictions = []

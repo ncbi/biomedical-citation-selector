@@ -38,7 +38,7 @@ class test_BmCS_cli(unittest.TestCase):
         adjust decision threshold, and make predictions
         """
         # For NCBI testing procedure and limits paths are hardcoded
-        cnn_model_path, ensemble_model_path = "./models/model_CNN_weights.hdf5", "./models/ensemble.joblib"
+        cnn_model_path, ensemble_model_path = "./BmCS/models/model_CNN_weights.hdf5", "./BmCS/models/ensemble.joblib"
         if not os.path.isfile(cnn_model_path):
             cnn_model_path = "/panfs/pan1.be-md.ncbi.nlm.nih.gov/entrez_idxother/SelIndexModels/models/model_CNN_weights.hdf5"
 
@@ -161,7 +161,7 @@ class test_BmCS_cli(unittest.TestCase):
         # 2 are predictions between highly confident in scope and out-of-scope predictions
         # 3 are special pubtypes. 
         self.assertEqual(adjusted_predictions[5], 2) 
-        self.assertEqual(adjusted_predictions[6], 2) 
+        self.assertEqual(adjusted_predictions[6], 0) 
         adjusted_predictions = filter_pub_type(citations, adjusted_predictions)
         self.assertEqual(adjusted_predictions[5], 3) 
         self.assertEqual(adjusted_predictions[6], 3) 

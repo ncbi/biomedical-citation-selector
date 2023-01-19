@@ -65,12 +65,12 @@ This will create a dist directory and create a .whl file inside. The .whl file i
 #### Download wheel and installation
 The .whl file can be found in the releases section of this repository: https://github.com/ncbi/biomedical-citation-selector/releases
 
-Under Assets, click on the BmCS-2.0.0-py3-none-any.whl link to download. You should also download the ensemble.joblib
-and model_CNN_weights.hdf5 files, whether or not you built the wheel yourself or downloaded it. 
+Under Assets, click on the BmCS-1.0.0-py3-none-any.whl link to download. You should also download the ensemble_v1_0_0.joblib
+and model_CNN_weights_v1_0_0.hdf5 files, whether or not you built the wheel yourself or downloaded it. 
 
 Assuming you have downloaded the .whl file, navigate to the directory where it lives and run:
 ```
-pip install BmCS-2.0-py3-none-any.whl
+pip install BmCS-1.0.0-py3-none-any.whl
 ```
 If all goes well, you have now installed the Biomedical Citation Selector (BmCS). Congratulations!
 BmCS has been added to PATH, and is executable from the command line. 
@@ -100,7 +100,7 @@ Once downloaded, the paths to the models should be provided via the command line
 ### For NCBI usage
 To run BmCS:
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml 
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --path path/to/some_citations.xml 
 ```
 For example, if sample_citations.xml is in your current directory and the models are in a models diretory 
 ```
@@ -116,10 +116,10 @@ pmid|prediction|probability|NLM journal ID
 
 In the prediction field, 4 labels are possible:
 
-0: Out-of-scope for indexing, 99.5% confidence  
-1: In-scope for indexing, 97% confidence  
+0: Out-of-scope for indexing.  
+1: In-scope for indexing.  
 2: Citation should be human-reviewed.  
-3: Citation marked as one of the publication types specified in the publication_types file. This label is off by default and is controlled by --pubtype-filter  
+3: Citation marked as one of the publication types specified in the publication_types file. This label is off by default and is controlled by the --pubtype-filter.  
 
 ### Alternative implementation
 If the --filter option is provided, there are a few ways to filter and adjust the predictions.
@@ -127,17 +127,17 @@ The flags shown here are explained in more detail in the section below.
 
 To make predictions solely for selectively indexed journals with statuses not MEDLINE or PubMed-not-MEDLINE:
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --path path/to/some_citations.xml --filter
 ```
 
 To mark the citations mentioned above that are of publication types such as comments or erratum with a 3 in the predictions:
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter --pubtype-filter
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --path path/to/some_citations.xml --filter --pubtype-filter
 ```
 
 To make predictions for citations only of status MEDLINE:
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --path path/to/some_citations.xml --filter --predict-medline
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --path path/to/some_citations.xml --filter --predict-medline
 ```
 
 ### Command line options:
@@ -208,7 +208,7 @@ by the predict-medline, pubtype-filter and filter options, but journal-drop and 
 
 For example:
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --validation --dest path/to/output/
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --validation --dest path/to/output/
 ```
 This will output a performance report into the file BmCS_test_results.txt in the output directory. 
 It is not necessary to include the --path option when running these tests. 
@@ -227,11 +227,11 @@ BmCS in-scope precision
 
 Once the program is installed run both of the following commands: 
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --validation
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --validation
 ```
 and
 ```
-BmCS /path/to/cnn/weights.hdf5 /path/to/model.joblib --test
+BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --test
 ```
 If no options are included, a set of assertions 
 will be tested on the model's performance. If the assertions are passed,
