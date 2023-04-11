@@ -26,7 +26,7 @@ setuptools.setup(
             "scikit-learn==0.24.1",
             "tensorflow==2.8.4",
             "python-dateutil==2.8.1",
-            "nltk==3.6.1",
+            "nltk==3.6.6",
             "h5py==3.1.0",
             "numpy==1.24.2",
             "six==1.15.0",
