@@ -193,7 +193,7 @@ BmCS /path/to/model_CNN_weights.hdf5 /path/to/ensemble.joblib --path path/to/som
 
 If you forget your options, input:
 ```
-BmCS --help
+BmCS --help.
 ```
 and you'll get a little help.
 
